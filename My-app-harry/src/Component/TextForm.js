@@ -1,0 +1,57 @@
+import React, { useState } from 'react'
+
+export default function TextForm(props) {
+    const handleUpClick = () => {
+        // console.log("handleUpClick was clicked");
+        let newText = text.toUpperCase();
+        setText(newText)
+    }
+    const handleLoClick = () => {
+        let newText = text.toLowerCase();
+        setText(newText)
+    }
+
+    //Remove extra spaces
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[   ]+/);
+        setText(newText.join(" "))
+    }
+
+
+    const handleclrClick = () => {
+        let newText = "";
+        setText(newText)
+    }
+    const handleOnChange = (event) => {
+        // console.log("handleOnChange");
+        setText(event.target.value)
+    }
+
+    const [text, setText] = useState("")
+    //Change the alue of text
+    // text = "Enter text here" //This is wrong way
+    //setText("Enter text here"); // This is right way
+
+    return (
+        <>
+            <div className='container'>
+                <h1>{props.heading}</h1>
+                <div className="mb-3">
+                    <textarea className="form-control" placeholder='Enter your text' value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                </div>
+
+                <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to uppercase</button>
+                <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to lowercase</button>
+                <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+                <button className="btn btn-primary mx-1" onClick={handleclrClick}>Clear</button>
+            </div>
+            <div className="container my-3">
+                <h1>Your text summary</h1>
+                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{0.008 * text.split(" ").length} minutes to read </p>
+                <h2>Preview</h2>
+                <p>{text}</p>
+            </div>
+        </>
+    )
+}
