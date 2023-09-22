@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import User from './User';
+import Classuser from './Classuser';
+import JSuser from './JSuser';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    {/* <User /> */}
+    {/* <Classuser /> */}
+    {/* <JSuser /> */}
   </React.StrictMode>
 );
 
