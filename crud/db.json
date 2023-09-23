@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "name": "aaa",
+      "email": "aaa@aaa",
+      "password": "aaa",
+      "id": 1
+    },
+    {
+      "name": "bbb",
+      "email": "bbb@bbb",
+      "password": "bbb",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "ccc",
+      "email": "ccc@ccc",
+      "password": "cccc"
+    },
+    {
+      "name": "ddd",
+      "email": "ddd@ddd",
+      "password": "ddd",
+      "id": 4
+    },
+    {
+      "name": "eee",
+      "email": "eee@eee",
+      "password": "eee",
+      "id": 5
+    }
+  ]
+}
