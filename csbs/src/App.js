@@ -13,7 +13,13 @@ import Propsinclass from "./Propsinclass";
 import Getinputdata from "./Getinputdata";
 import Hidendshow from "./Hidendshow";
 import Handleform from "./Handleform";
+import Condtitonrendering from "./Condtitonrendering";
+import Basicformvalidation from "./Basicformvalidation";
+import Functionasprops from "./Functionasprops";
 function App() {
+  function functionprops() {
+    alert("Function as a props")
+  }
   return (
     <div className="App">
       <h1>Welcome to react</h1>
@@ -34,10 +40,15 @@ function App() {
 
       {/* <Getinputdata /> */}
       {/* <Hidendshow /> */}
-      <Handleform />
+      {/* <Handleform /> */}
+      {/* <Condtitonrendering /> */}
+      {/* <Basicformvalidation /> */}
+      <Functionasprops name={functionprops} />
     </div>
   );
   function Developer() {
+
+
     return (
       <div className="App">
         <h1>Hello Developer</h1>
