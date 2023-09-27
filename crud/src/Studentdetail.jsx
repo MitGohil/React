@@ -20,7 +20,7 @@ const Studentdetail = () => {
         })
     }, [studentid])
     const handleback = () => {
-        navigate("/")
+        navigate("/studentdata")
     }
 
     return (

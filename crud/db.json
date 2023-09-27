@@ -1,34 +1,32 @@
 {
   "students": [
     {
-      "name": "aaa",
-      "email": "aaa@aaa",
-      "password": "aaa",
-      "id": 1
+      "id": 1,
+      "name": "Mitesh",
+      "email": "mdgohil111@gmail.com",
+      "password": "jaymeet",
+      "role": "admin"
     },
     {
+      "id": 2,
       "name": "bbb",
       "email": "bbb@bbb",
       "password": "bbb",
-      "id": 2
+      "role": "admin"
     },
     {
       "id": 3,
       "name": "ccc",
       "email": "ccc@ccc",
-      "password": "cccc"
+      "password": "ccc",
+      "role": "user"
     },
     {
-      "name": "ddd",
-      "email": "ddd@ddd",
-      "password": "ddd",
-      "id": 4
-    },
-    {
-      "name": "eee",
-      "email": "eee@eee",
-      "password": "eee",
-      "id": 5
+      "id": 4,
+      "name": "aaa",
+      "email": "aaa@aaa",
+      "password": "aaaa",
+      "role": "admin"
     }
   ]
 }

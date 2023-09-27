@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBInput, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBInput, MDBRow, MDBCol, MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 import "./api.css"
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ export default function Editstudentdata() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [role, setRole] = useState("")
     const navigate = useNavigate()
     const { studentid } = useParams()
 
@@ -21,13 +22,14 @@ export default function Editstudentdata() {
                 setName(resp.name)
                 setEmail(resp.email)
                 setPassword(resp.password)
+                setRole(resp.role)
             })
         })
     }, [studentid])
 
     const handleedit = () => {
-        const data = { id, name, email, password }
-        if (name === "" || email === "" || password === "") {
+        const data = { id, name, email, password, role }
+        if (name === "" || email === "" || password === "" || role === "") {
             alert("Please fill blank input")
         }
         else {
@@ -39,16 +41,16 @@ export default function Editstudentdata() {
                 body: JSON.stringify(data)
             }).then((result) => {
                 result.json().then((resp) => {
-                    navigate("/")
+                    navigate("/studentdata")
                 })
             })
         }
     }
 
     const handleback = () => {
-        navigate("/")
+        navigate("/studentdata")
     }
-    console.log(id);
+    // console.log(id);
     return (
         <>
             <MDBContainer fluid className='my-5'>
@@ -63,14 +65,30 @@ export default function Editstudentdata() {
                                 <MDBInput value={name} onChange={(e) => setName(e.target.value)} wrapperClass='mb-4' label='Name' id='form2' type='text' />
                                 <MDBInput value={email} onChange={(e) => setEmail(e.target.value)} wrapperClass='mb-4' label='Email' id='form3' type='email' />
                                 <MDBInput value={password} onChange={(e) => setPassword(e.target.value)} wrapperClass='mb-4' label='Password' id='form4' type='password' />
+                                {/* <MDBInput value={role} onChange={(e) => setRole(e.target.value)} wrapperClass='mb-4' label='Role' id='form5' type='text' /> */}
+                                {/* <MDBDropdown>
+                                    <MDBDropdownToggle>Select role</MDBDropdownToggle>
+                                    <MDBDropdownMenu value={role} onChange={(e) => setPassword(e.target.select)}>
+                                    <MDBDropdownItem link>admin</MDBDropdownItem>
+                                    <MDBDropdownItem link>user</MDBDropdownItem>
+                                    </MDBDropdownMenu>
+                                </MDBDropdown> */}
+                                <MDBCardBody className='text-center'>
+                                    <p>Please Select role</p>
+                                    <select className='px-5' value={role} onChange={(e) => setRole(e.target.value)}>
+                                        <option value="admin">admin</option>
+                                        <option value="user">user</option>
+                                    </select>
 
-
+                                </MDBCardBody>
                                 <MDBBtn className=' my-4 mx-2' onClick={handleedit}>Edit User</MDBBtn>
                                 <MDBBtn className=' my-4 mx-2' onClick={handleback} >Back</MDBBtn>
 
                             </MDBCardBody>
                         </MDBCard>
+
                     </MDBCol>
+
 
                     <MDBCol col='6'>
                         <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/005.jpg" class=" rounded-4 shadow-4"

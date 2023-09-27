@@ -11,7 +11,7 @@ function Createuser() {
     const navigate = useNavigate()
 
     const handlesubmit = (event) => {
-        const data = { name, email, password }
+        const data = { name, email, password, role: "user" }
         event.preventDefault()
         if (name === "" || email === "" || password === "") {
             alert("Please fill blank input")
@@ -26,13 +26,14 @@ function Createuser() {
                 body: JSON.stringify(data)
             }).then((result) => {
                 result.json().then((resp) => {
-                    navigate("/")
+                    alert('Create successfully.')
+                    navigate("/login")
                 })
             })
         }
     }
     const handleback = () => {
-        navigate("/")
+        navigate("/home")
     }
     return (
         <MDBContainer fluid className='my-5'>

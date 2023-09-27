@@ -5,6 +5,8 @@ export default function Studentdata() {
 
     const [userdata, setUserdata] = useState([])
     const navigate = useNavigate()
+    const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+
 
     // We store fetch API in one variable and use it many time in project
     const getStudentdata = () => {
@@ -59,20 +61,27 @@ export default function Studentdata() {
         <>
             <h1 className='text-center fw-bold text-decoration-underline fst-italic'>Student data</h1>
 
-            <MDBTable className='w-75 mx-auto' align='middle' border="1px">
+            <MDBTable className='w-75 mx-auto' align='middle' border="1px" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                 <MDBTableHead>
                     <tr>
+                        <th colSpan="5" className='text-center'>
+                            <Link to="/login">
+                                <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Back</MDBBtn>
+                            </Link>
+                        </th>
+                    </tr>
+                    {/* <tr>
                         <th colSpan="5" className='text-center'>
                             <Link to="/createuser">
                                 <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Add New User</MDBBtn>
                             </Link>
                         </th>
-                    </tr>
+                    </tr> */}
                     <tr className='fw-bold text-decoration-underline fs-4'>
-                        <th className='text-dark bg-gradient' scope='col'>Id</th>
-                        <th className='text-dark bg-gradient' scope='col'>Name</th>
-                        <th className='text-dark bg-gradient' scope='col'>Email</th>
-                        <th className='text-dark bg-gradient' scope='col'>Password</th>
+                        <th className='text-light bg-gradient' scope='col'>Id</th>
+                        <th className='text-light bg-gradient' scope='col'>Name</th>
+                        <th className='text-light bg-gradient' scope='col'>Email</th>
+                        <th className='text-light bg-gradient' scope='col'>Password</th>
                         <th className='text-center  text-dark bg-gradient' scope='col'>Actions</th>
                     </tr>
                 </MDBTableHead>
@@ -80,10 +89,10 @@ export default function Studentdata() {
                     {
                         userdata.map((data) =>
                             <tr >
-                                <td className='text-dark bg-gradient'>{data.id}</td>
-                                <td className='text-dark bg-gradient'>{data.name}</td>
-                                <td className='text-dark bg-gradient'>{data.email}</td>
-                                <td className='text-dark bg-gradient'>{data.password}</td>
+                                <td className='text-light bg-gradient'>{data.id}</td>
+                                <td className='text-light bg-gradient'>{data.name}</td>
+                                <td className='text-light bg-gradient'>{data.email}</td>
+                                <td className='text-light bg-gradient'>{data.password}</td>
                                 <td className='text-center'>
                                     <MDBBtn onClick={() => { handleedit(data.id) }} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm'>Edit</MDBBtn>
                                     <MDBBtn onClick={() => handledetail(data.id)} className='text-dark mx-1 bg-secondary bg-gradient' rounded size='sm'>Details</MDBBtn>
