@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import {
-    MDBContainer,
-    MDBInput,
-    MDBCheckbox,
-    MDBBtn,
-    MDBIcon, MDBCardBody
+    MDBContainer, MDBInput, MDBBtn, MDBCardBody
 }
     from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,16 +10,16 @@ function Login() {
     const [password, setPassword] = useState("")
 
     const navigate = useNavigate()
-    const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+    // const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
 
 
     const signin = () => {
-        fetch("http://localhost:2000/students?email=" + email).then((result) => {
+        fetch(`http://localhost:2000/students?email=${email}&password=${password}`).then((result) => {
             return result.json().then((resp) => {
                 console.log(resp);
                 if (resp[0]) {
                     sessionStorage.setItem("role", resp[0].role)
-                    if (resp[0].role == "admin") {
+                    if (resp[0].role === "admin") {
                         navigate("/studentdata")
                     }
                     else {

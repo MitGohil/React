@@ -64,7 +64,7 @@ export default function Studentdata() {
             <MDBTable className='w-75 mx-auto' align='middle' border="1px" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                 <MDBTableHead>
                     <tr>
-                        <th colSpan="5" className='text-center'>
+                        <th colSpan="6" className='text-center'>
                             <Link to="/login">
                                 <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Back</MDBBtn>
                             </Link>
@@ -82,7 +82,8 @@ export default function Studentdata() {
                         <th className='text-light bg-gradient' scope='col'>Name</th>
                         <th className='text-light bg-gradient' scope='col'>Email</th>
                         <th className='text-light bg-gradient' scope='col'>Password</th>
-                        <th className='text-center  text-dark bg-gradient' scope='col'>Actions</th>
+                        <th className='text-center text-light bg-gradient' scope='col'>Role</th>
+                        <th className='text-center text-light bg-gradient' scope='col'>Actions</th>
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
@@ -93,6 +94,7 @@ export default function Studentdata() {
                                 <td className='text-light bg-gradient'>{data.name}</td>
                                 <td className='text-light bg-gradient'>{data.email}</td>
                                 <td className='text-light bg-gradient'>{data.password}</td>
+                                <td className='text-light bg-gradient'>{data.role}</td>
                                 <td className='text-center'>
                                     <MDBBtn onClick={() => { handleedit(data.id) }} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm'>Edit</MDBBtn>
                                     <MDBBtn onClick={() => handledetail(data.id)} className='text-dark mx-1 bg-secondary bg-gradient' rounded size='sm'>Details</MDBBtn>

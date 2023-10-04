@@ -26,7 +26,14 @@
       "name": "aaa",
       "email": "aaa@aaa",
       "password": "aaaa",
-      "role": "admin"
+      "role": "user"
+    },
+    {
+      "name": "ddd",
+      "email": "ddd@ddd",
+      "password": "vdsdcs",
+      "role": "user",
+      "id": 5
     }
   ]
 }
