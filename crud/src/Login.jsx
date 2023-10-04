@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     MDBContainer, MDBInput, MDBBtn, MDBCardBody
 }
@@ -11,6 +11,10 @@ function Login() {
 
     const navigate = useNavigate()
     // const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+
+    useEffect(() => {
+        sessionStorage.clear()
+    }, [])
 
 
     const signin = () => {
@@ -27,7 +31,7 @@ function Login() {
                     }
                 }
                 else {
-                    alert("Invalid user")
+                    alert("Invalid Email or Password")
                 }
             })
         })

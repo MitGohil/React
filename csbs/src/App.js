@@ -16,6 +16,7 @@ import Handleform from "./Handleform";
 import Condtitonrendering from "./Condtitonrendering";
 import Basicformvalidation from "./Basicformvalidation";
 import Functionasprops from "./Functionasprops";
+import Constructorinlifecycle from "./Constructorinlifecycle";
 function App() {
   function functionprops() {
     alert("Function as a props")
@@ -43,7 +44,8 @@ function App() {
       {/* <Handleform /> */}
       {/* <Condtitonrendering /> */}
       {/* <Basicformvalidation /> */}
-      <Functionasprops name={functionprops} />
+      {/* <Functionasprops name={functionprops} /> */}
+      <Constructorinlifecycle />
     </div>
   );
   function Developer() {

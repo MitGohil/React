@@ -33,7 +33,14 @@ export default function Studentdata() {
         //         setUserdata(resp)
         //     })
         // })
-        getStudentdata()
+        let role = sessionStorage.getItem('role')
+        if (role !== "admin") {
+            navigate("/login")
+        }
+        else {
+
+            getStudentdata()
+        }
     }, [])
 
     function handledel(id) {
@@ -66,7 +73,7 @@ export default function Studentdata() {
                     <tr>
                         <th colSpan="6" className='text-center'>
                             <Link to="/login">
-                                <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Back</MDBBtn>
+                                <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Log-Out</MDBBtn>
                             </Link>
                         </th>
                     </tr>
