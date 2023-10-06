@@ -6,15 +6,19 @@ import User from './User';
 import Classuser from './Classuser';
 import JSuser from './JSuser';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import Store from './Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={Store}>
     <App />
     {/* <User /> */}
     {/* <Classuser /> */}
     {/* <JSuser /> */}
-  </React.StrictMode>
+  </Provider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

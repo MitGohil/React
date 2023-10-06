@@ -2,7 +2,6 @@ import User from "./User";
 
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 import "./App.css"
 import Classuser from "./Classuser";
 import JSuser from "./JSuser";
@@ -17,6 +16,7 @@ import Condtitonrendering from "./Condtitonrendering";
 import Basicformvalidation from "./Basicformvalidation";
 import Functionasprops from "./Functionasprops";
 import Constructorinlifecycle from "./Constructorinlifecycle";
+import Reduxex from "./Reduxex";
 function App() {
   function functionprops() {
     alert("Function as a props")
@@ -45,7 +45,9 @@ function App() {
       {/* <Condtitonrendering /> */}
       {/* <Basicformvalidation /> */}
       {/* <Functionasprops name={functionprops} /> */}
-      <Constructorinlifecycle />
+      {/* <Constructorinlifecycle /> */}
+
+      <Reduxex />
     </div>
   );
   function Developer() {

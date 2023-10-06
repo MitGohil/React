@@ -12,7 +12,7 @@
       "name": "bbb",
       "email": "bbb@bbb",
       "password": "bbb",
-      "role": "user"
+      "role": "admin"
     },
     {
       "id": 3,
@@ -34,13 +34,6 @@
       "password": "vdsdcs",
       "role": "user",
       "id": 5
-    },
-    {
-      "name": "f",
-      "email": "f@g.com",
-      "password": "qwe",
-      "role": "user",
-      "id": 6
     }
   ]
 }
