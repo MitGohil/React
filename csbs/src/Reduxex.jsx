@@ -1,7 +1,7 @@
 import React from 'react'
 import { Incnumber, Decnumber } from './action';
 import { text } from './action';
-import { dark } from './action';
+import { bg } from './action';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function Reduxex() {
@@ -17,7 +17,7 @@ export default function Reduxex() {
             <button onClick={() => dispatch(Decnumber())}>-</button>
             <h2>{mytext}</h2>
             <button onClick={() => dispatch(text())}>Change-text</button>
-            <button onClick={() => dispatch(dark())}>Change-Background</button>
+            <button onClick={() => dispatch(bg())}>Change-Background</button>
 
         </>
     );

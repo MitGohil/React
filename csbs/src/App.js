@@ -16,6 +16,7 @@ import Condtitonrendering from "./Condtitonrendering";
 import Basicformvalidation from "./Basicformvalidation";
 import Functionasprops from "./Functionasprops";
 import Constructorinlifecycle from "./Constructorinlifecycle";
+import Usestate from "./useState";
 import Reduxex from "./Reduxex";
 function App() {
   function functionprops() {
@@ -47,7 +48,9 @@ function App() {
       {/* <Functionasprops name={functionprops} /> */}
       {/* <Constructorinlifecycle /> */}
 
-      <Reduxex />
+      {/* <Reduxex /> */}
+
+      <Usestate />
     </div>
   );
   function Developer() {
