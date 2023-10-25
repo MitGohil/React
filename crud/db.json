@@ -12,7 +12,7 @@
       "name": "bbb",
       "email": "bbb@bbb",
       "password": "bbb",
-      "role": "admin"
+      "role": "user"
     },
     {
       "id": 3,

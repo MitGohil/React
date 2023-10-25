@@ -21,7 +21,7 @@ export default function Navbar() {
                 <MDBContainer fluid>
                     <MDBNavbarBrand>
                         <MDBNavbarLink active aria-current='page' >
-                            <Link to="/home">Navbar</Link>
+                            <Link to="#">Navbar</Link>
                         </MDBNavbarLink>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler
@@ -33,16 +33,16 @@ export default function Navbar() {
                     </MDBNavbarToggler>
                     <MDBCollapse navbar show={showNavSecond}>
                         <MDBNavbarNav>
-                            <MDBNavbarLink active aria-current='page' >
+                            {/* <MDBNavbarLink active aria-current='page' >
                                 <Link to="/home">Home</Link>
-                            </MDBNavbarLink>
+                            </MDBNavbarLink> */}
                             <MDBNavbarLink active aria-current='page' >
                                 <Link to="/login">Login</Link>
                             </MDBNavbarLink>
                             <MDBNavbarLink active aria-current='page' >
                                 <Link to="/createuser">Register</Link>
                             </MDBNavbarLink>
-                           
+
 
                         </MDBNavbarNav>
                     </MDBCollapse>

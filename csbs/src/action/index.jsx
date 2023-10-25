@@ -15,8 +15,9 @@ export const text = () => {
     }
 }
 
-export const bg = () => {
+export const bg = (color) => {
     return {
-        type: "DARK"
+        type: "DARK",
+        payload: "color"
     }
 }

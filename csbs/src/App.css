@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+.primary{
+  background-color : yellow;
+  color : blue
+}

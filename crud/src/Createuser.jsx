@@ -33,7 +33,7 @@ function Createuser() {
         }
     }
     const handleback = () => {
-        navigate("/home")
+        navigate("/login")
     }
     return (
         <MDBContainer fluid className='my-5'>

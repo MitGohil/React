@@ -1,8 +1,8 @@
 import User from "./User";
 
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./App.css"
+import "./App.css";
 import Classuser from "./Classuser";
 import JSuser from "./JSuser";
 import Stateinfunction from "./Stateinfunction";
@@ -18,9 +18,11 @@ import Functionasprops from "./Functionasprops";
 import Constructorinlifecycle from "./Constructorinlifecycle";
 import Usestate from "./useState";
 import Reduxex from "./Reduxex";
+import Useeffect from "./Useeffect";
+import Styled from "./Styled";
 function App() {
   function functionprops() {
-    alert("Function as a props")
+    alert("Function as a props");
   }
   return (
     <div className="App">
@@ -47,23 +49,19 @@ function App() {
       {/* <Basicformvalidation /> */}
       {/* <Functionasprops name={functionprops} /> */}
       {/* <Constructorinlifecycle /> */}
-
       {/* <Reduxex /> */}
-
-      <Usestate />
+      {/* <Usestate /> */}
+      {/* <Useeffect /> */}
+      <Styled />
     </div>
   );
   function Developer() {
-
-
     return (
       <div className="App">
         <h1>Hello Developer</h1>
       </div>
     );
   }
-
 }
-
 
 export default App;

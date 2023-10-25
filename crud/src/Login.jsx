@@ -37,7 +37,7 @@ function Login() {
         })
     }
     const handleback = () => {
-        navigate("/home")
+        navigate("/login")
     }
     return (
         <>
