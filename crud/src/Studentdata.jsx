@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Studentdata() {
 
     const [userdata, setUserdata] = useState([])
+    const [query, setQuery] = useState("")
     const navigate = useNavigate()
     const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
 
@@ -77,6 +78,11 @@ export default function Studentdata() {
                             </Link>
                         </th>
                     </tr>
+                    <tr>
+                        <th colSpan="6" className='text-center'>
+                            <input placeholder="Search" type='Search' onChange={e => setQuery(e.target.value)} />
+                        </th>
+                    </tr>
                     {/* <tr>
                         <th colSpan="5" className='text-center'>
                             <Link to="/createuser">
@@ -95,7 +101,7 @@ export default function Studentdata() {
                 </MDBTableHead>
                 <MDBTableBody>
                     {
-                        userdata.map((data) =>
+                        userdata.filter((item) => item.name.toLowerCase().includes(query) || item.email.toLowerCase().includes(query)).map((data) =>
                             <tr >
                                 <td className='text-light bg-gradient'>{data.id}</td>
                                 <td className='text-light bg-gradient'>{data.name}</td>

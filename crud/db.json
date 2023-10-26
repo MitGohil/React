@@ -25,15 +25,15 @@
       "id": 4,
       "name": "aaa",
       "email": "aaa@aaa",
-      "password": "aaaa",
-      "role": "user"
+      "password": "aaa",
+      "role": "admin"
     },
     {
+      "id": 5,
       "name": "ddd",
       "email": "ddd@ddd",
-      "password": "vdsdcs",
-      "role": "user",
-      "id": 5
+      "password": "ddd",
+      "role": "user"
     }
   ]
 }
