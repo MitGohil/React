@@ -9,6 +9,7 @@ import Createuser from "./Createuser";
 import Editstudentdata from "./Editstudentdata";
 import Studentdetail from "./Studentdetail";
 import Loginnav from "./Loginnav";
+import Projects from "./Projects";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/" element={<Loginnav />}>
             {/* <Route path='login' element={<Login />} /> */}
             <Route path="home" element={<Home />} />
+            <Route path="Projects" element={<Projects />} />
+
             <Route path="studentdata" element={<Studentdata />} />
             <Route
               path={"editstudentdata/:studentid"}

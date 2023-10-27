@@ -34,6 +34,13 @@
       "email": "ddd@ddd",
       "password": "ddd",
       "role": "user"
+    },
+    {
+      "name": "eee",
+      "email": "eee@eee",
+      "password": "eee",
+      "role": "user",
+      "id": 6
     }
   ]
 }

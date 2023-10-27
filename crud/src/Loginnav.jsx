@@ -37,7 +37,7 @@ export default function Loginnav() {
                                 <Link to="/home">Home</Link>
                             </MDBNavbarLink>
                             <MDBNavbarLink active aria-current='page' >
-                                <Link to="#">Projects</Link>
+                                <Link to="/projects">Projects</Link>
                             </MDBNavbarLink>
                             <MDBNavbarLink active aria-current='page' >
                                 <Link to="#">About</Link>

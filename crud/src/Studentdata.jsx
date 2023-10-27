@@ -101,7 +101,7 @@ export default function Studentdata() {
                 </MDBTableHead>
                 <MDBTableBody>
                     {
-                        userdata.filter((item) => item.name.toLowerCase().includes(query) || item.email.toLowerCase().includes(query)).map((data) =>
+                        userdata.filter((item) => item.name.toLowerCase().includes(query) || item.email.toLowerCase().includes(query) || item.role.toLowerCase().includes(query)).map((data) =>
                             <tr >
                                 <td className='text-light bg-gradient'>{data.id}</td>
                                 <td className='text-light bg-gradient'>{data.name}</td>
