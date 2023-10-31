@@ -8,16 +8,18 @@ export const Decnumber = () => {
         type: "DECREMENT"
     }
 }
-
 export const text = () => {
     return {
         type: "TEXT"
     }
 }
-
-export const bg = (color) => {
+export const Change_bg = () => {
     return {
-        type: "DARK",
-        payload: "color"
+        type: "CHANGE_BG",
+    }
+}
+export const Reset_bg = () => {
+    return {
+        type: "RESET_BG",
     }
 }

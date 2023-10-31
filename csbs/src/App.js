@@ -49,8 +49,8 @@ function App() {
       {/* <Basicformvalidation /> */}
       {/* <Functionasprops name={functionprops} /> */}
       {/* <Constructorinlifecycle /> */}
-      {/* <Reduxex /> */}
-      {/* <Usestate /> */}
+      <Reduxex />
+      <Usestate />
       {/* <Useeffect /> */}
       <Styled />
     </div>
