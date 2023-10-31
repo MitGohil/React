@@ -37,18 +37,19 @@ export default function Reduxex() {
                 >
                     reset color
                 </MDBBtn>
-                <MDBBtn rounded className='mx-2' onClick={() => setShow(!show)}>Toggle</MDBBtn>
+                <br />
+                <MDBBtn rounded className='m-3' onClick={() => setShow(!show)}>Toggle</MDBBtn> <br />
                 {
                     show ? <MDBBtn
                         onClick={() => dispatch(Change_bg())}
-                        className="mx-5 mt-5"
+                        className="m-3"
                         rounded
                     >
                         change color
                     </MDBBtn> : <MDBBtn
                         onClick={() => dispatch(Reset_bg())}
                         color="danger"
-                        className=""
+                        className="m-3"
                         rounded
                     >
                         reset color

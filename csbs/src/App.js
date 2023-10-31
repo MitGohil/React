@@ -20,6 +20,8 @@ import Usestate from "./useState";
 import Reduxex from "./Reduxex";
 import Useeffect from "./Useeffect";
 import Styled from "./Styled";
+import Reuse_compo from "./Reuse_compo";
+import Purecompo from "./Purecompo";
 function App() {
   function functionprops() {
     alert("Function as a props");
@@ -49,10 +51,12 @@ function App() {
       {/* <Basicformvalidation /> */}
       {/* <Functionasprops name={functionprops} /> */}
       {/* <Constructorinlifecycle /> */}
-      <Reduxex />
-      <Usestate />
+      {/* <Reduxex /> */}
+      {/* <Usestate /> */}
       {/* <Useeffect /> */}
-      <Styled />
+      {/* <Styled /> */}
+      {/* <Reuse_compo /> */}
+      <Purecompo />
     </div>
   );
   function Developer() {
