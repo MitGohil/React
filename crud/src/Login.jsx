@@ -4,6 +4,8 @@ import {
 }
     from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Login() {
     const [email, setEmail] = useState("")

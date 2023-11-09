@@ -11,13 +11,15 @@ import {
     MDBCollapse
 } from 'mdb-react-ui-kit';
 import { Outlet, Link } from 'react-router-dom';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function Navbar() {
     const [showNavSecond, setShowNavSecond] = useState(false);
 
     return (
         <>
-            <MDBNavbar expand='lg' light bgColor='light'>
+            <MDBNavbar expand='lg' light bgColor='light' sticky>
                 <MDBContainer fluid>
                     <MDBNavbarBrand>
                         <MDBNavbarLink active aria-current='page' >
@@ -42,8 +44,6 @@ export default function Navbar() {
                             <MDBNavbarLink active aria-current='page' >
                                 <Link to="/createuser">Register</Link>
                             </MDBNavbarLink>
-
-
                         </MDBNavbarNav>
                     </MDBCollapse>
                 </MDBContainer>

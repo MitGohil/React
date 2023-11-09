@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { MDBBtn, MDBContainer, MDBCard, MDBCardBody, MDBInput, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import "./api.css"
 import { useNavigate } from 'react-router-dom';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function Createuser() {
     const [id, setId] = useState("")
