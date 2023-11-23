@@ -11,6 +11,7 @@ import Studentdata from "./Studentdata.jsx"
 import Editstudentdata from "./Editstudentdata.jsx"
 import Studentdetails from "./Studentdetail.jsx"
 import Weather from "./Projects/weatherapp/Weatherapp.jsx";
+import Agecalc from "./Projects/age-calculator/Age-calc.jsx"
 
 // const ClasscompoRoute = React.lazy(() => import("./Classcompo/Classcomporoutes"));
 // const FunctionalCompoRoute = React.lazy(() => import("./Funtionalcompo/Functionalcomporoutes"))
@@ -58,6 +59,10 @@ const Mainrouter = createBrowserRouter([
     {
         path: "/projects/Weatherapp",
         element: (<><Loginnav /><Projects /><Weather /></>)
+    },
+    {
+        path: "/projects/Agecalculator",
+        element: (<><Loginnav /><Projects /><Agecalc /></>)
     }
 
 ])

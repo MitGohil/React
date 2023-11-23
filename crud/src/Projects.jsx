@@ -20,6 +20,11 @@ const Projects = () => {
                             <Link to="/projects/Weatherapp">Weather App</Link>
                         </h3>
                     </div>
+                    <div className="col">
+                        <h3 className="text-center">
+                            <Link to="/projects/Agecalculator">Age Calculator</Link>
+                        </h3>
+                    </div>
                 </div>
 {/* 
                 <MDBBtn className='me-1' to="/projects/Newsapp">NEWS App
