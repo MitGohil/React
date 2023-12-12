@@ -17,23 +17,16 @@
     {
       "id": 3,
       "name": "ccc",
-      "email": "ccc@ccc",
+      "email": "ccc@cccc",
       "password": "ccc",
       "role": "user"
     },
     {
       "id": 4,
       "name": "aaa",
-      "email": "aaa@aaa",
+      "email": "aaa@aaaa",
       "password": "aaa",
       "role": "admin"
-    },
-    {
-      "id": 5,
-      "name": "ddd",
-      "email": "ddd@ddd",
-      "password": "ddd",
-      "role": "user"
     },
     {
       "id": 6,

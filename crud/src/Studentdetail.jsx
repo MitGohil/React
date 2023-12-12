@@ -68,3 +68,4 @@ const Studentdetail = () => {
 }
 
 export default Studentdetail;
+

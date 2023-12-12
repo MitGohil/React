@@ -11,9 +11,10 @@ import Drizzle from "./img/drizzle.png"
 import Mist from "./img/mist.png"
 const Weather = () => {
     const [city, setCity] = useState(null)
-    const [search, setSearch] = useState("")
     const [speed, setSpeed] = useState(null)
-    // const [weatherIcon, setWeatherIcon] = useState(rain)
+    const [condition, setCondition] = useState([])
+    const [search, setSearch] = useState("")
+    const [weatherIcon, setWeatherIcon] = useState(rain)
     const apiKey = "de875e9664c4cb49c08b83bad5e71079";
 
 
@@ -23,7 +24,26 @@ const Weather = () => {
             const response = await fetch(apiUrl);
             const resjson = await response.json();
             setCity(resjson.main)
-            console.log(resjson);
+            setSpeed(resjson.wind)
+            setCondition(resjson.Weather)
+            // console.log(resjson);
+            console.log(city);
+            console.log(speed);
+            // console.log(resjson.Weather);
+
+            // if (condition.main) {
+            //     // weatherIcon = { clouds }
+            //     console.log("condition[0].main");
+            // } else if (condition.weather[0].main == "Clear") {
+            //     weatherIcon = { Clear }
+            // } else if (condition.weather[0].main == "Rain") {
+            //     weatherIcon = { rain }
+            // } else if (condition.weather[0].main == "Drizzle") {
+            //     weatherIcon = { Drizzle }
+            // } else if (condition.weather[0].main == "Mist") {
+            //     weatherIcon = { Mist }
+            // }
+
         }
         searchCity()
     }, [search])
@@ -37,31 +57,31 @@ const Weather = () => {
                 {
                     !city ? (<h2>Data not found</h2>) :
                         (<div className="weather">
-                            {/* <img src={weatherIcon} className="weather-icon" /> */}
+                            <img src={weatherIcon} alt='' className="weather-icon" />
                             <h1 className="temp">{city.temp}°c</h1>
                             <h2 className="city">{search}</h2>
                             <div className="details">
-                                <div className="col">
-                                    <img src={humidity1} />
+                                <div className="col-weather">
+                                    <img alt='' src={humidity1} />
                                     <div>
                                         <p className="humidity">{city.humidity} %</p>
                                         <p>Humidity </p>
                                     </div>
                                 </div>
-                                <div className="col">
-                                    <img src={pressure1} />
+                                <div className="col-weather">
+                                    <img alt='' src={pressure1} />
                                     <div>
                                         <p className="pressure">{city.pressure} Pa</p>
                                         <p>Atmospheric Pressure</p>
                                     </div>
                                 </div>
-                                {/* <div className="col">
-                                    <img src={wind1} />
+                                <div className="col-weather">
+                                    <img alt='' src={wind1} />
                                     <div>
-                                        <p className="wind">{wind.wind} kmph</p>
+                                        <p className="wind">{speed.speed} kmph</p>
                                         <p>Wind speed</p>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </div>)
                 }

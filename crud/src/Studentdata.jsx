@@ -1,5 +1,14 @@
 import React, { useEffect, useState, } from 'react'
-import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import {
+    MDBBtn, MDBTable, MDBTableHead, MDBTableBody,
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+} from 'mdb-react-ui-kit';
 import { Link, useNavigate } from 'react-router-dom';
 export default function Studentdata() {
 
@@ -7,6 +16,10 @@ export default function Studentdata() {
     const [query, setQuery] = useState("")
     const navigate = useNavigate()
     const img = "https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+
+    const [basicModal, setBasicModal] = useState(false);
+    const [dtl, setDtl] = useState({})
+
 
 
     // We store fetch API in one variable and use it many time in project
@@ -22,10 +35,18 @@ export default function Studentdata() {
         navigate(`/editstudentdata/${id}`)
         // navigate("/editstudentdata/" + id)
     }
+    // const handledetail = (id) => {
+    //     navigate(`/Studentdetails/${id}`)
+    //     // navigate("/Studentdetails/" + id)
+    // }
     const handledetail = (id) => {
-        navigate(`/Studentdetails/${id}`)
-        // navigate("/Studentdetails/" + id)
-    }
+        setBasicModal(!basicModal)
+        fetch(`http://localhost:2000/students/${id}`).then((result) => {
+            return result.json().then((resp) => {
+                setDtl(resp);
+            })
+        })
+    };
 
     useEffect(() => {
         // fetch("http://localhost:2000/students").then((result) => {
@@ -62,13 +83,16 @@ export default function Studentdata() {
         <>
             <h1 className='text-center fw-bold text-decoration-underline fst-italic'>Student data</h1>
 
-            <MDBTable className='w-75 mx-auto' align='middle' border="1px" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+            <MDBTable className='w-75 mx-auto' align='middle' border="1px" >
                 <MDBTableHead>
                     <tr>
                         <th colSpan="6" className='text-center'>
                             <Link to="/login">
                                 <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Log-Out</MDBBtn>
                             </Link>
+                            {/* <Link to="/createuser">
+                                <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Add New User</MDBBtn>
+                            </Link> */}
                         </th>
                     </tr>
                     <tr>
@@ -76,91 +100,82 @@ export default function Studentdata() {
                             <input placeholder="Search" type='Search' onChange={e => setQuery(e.target.value)} />
                         </th>
                     </tr>
-                    {/* <tr>
-                        <th colSpan="5" className='text-center'>
-                            <Link to="/createuser">
-                                <MDBBtn className=' text-dark mx-1 bg-info bg-gradient' rounded size='sm'>Add New User</MDBBtn>
-                            </Link>
-                        </th>
-                    </tr> */}
+
                     <tr className='fw-bold text-decoration-underline fs-4'>
-                        <th className='text-light bg-gradient' scope='col'>Id</th>
-                        <th className='text-light bg-gradient' scope='col'>Name</th>
-                        <th className='text-light bg-gradient' scope='col'>Email</th>
-                        <th className='text-light bg-gradient' scope='col'>Password</th>
-                        <th className='text-center text-light bg-gradient' scope='col'>Role</th>
-                        <th className='text-center text-light bg-gradient' scope='col'>Actions</th>
+                        <th className='text-dark bg-gradient' scope='col'>Id</th>
+                        <th className='text-dark bg-gradient' scope='col'>Name</th>
+                        <th className='text-dark bg-gradient' scope='col'>Email</th>
+                        <th className='text-dark bg-gradient' scope='col'>Password</th>
+                        <th className='text-center text-dark bg-gradient' scope='col'>Role</th>
+                        <th className='text-center text-dark bg-gradient' scope='col'>Actions</th>
                     </tr>
                 </MDBTableHead>
                 <MDBTableBody>
                     {
                         userdata.filter((item) => item.name.toLowerCase().includes(query) || item.email.toLowerCase().includes(query) || item.role.toLowerCase().includes(query)).map((data) =>
                             <tr >
-                                <td className='text-light bg-gradient'>{data.id}</td>
-                                <td className='text-light bg-gradient'>{data.name}</td>
-                                <td className='text-light bg-gradient'>{data.email}</td>
-                                <td className='text-light bg-gradient'>{data.password}</td>
-                                <td className='text-light bg-gradient'>{data.role}</td>
+                                <td className='fs-5 text-dark bg-gradient'>{data.id}</td>
+                                <td className='fs-5 text-dark bg-gradient'>{data.name}</td>
+                                <td className='fs-5 text-dark bg-gradient'>{data.email}</td>
+                                <td className='fs-5 text-dark bg-gradient'>{data.password}</td>
+                                <td className='fs-5 text-dark bg-gradient'>{data.role}</td>
                                 <td className='text-center'>
                                     <MDBBtn onClick={() => { handleedit(data.id) }} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm'>Edit</MDBBtn>
-                                    <MDBBtn onClick={() => handledetail(data.id)} className='text-dark mx-1 bg-secondary bg-gradient' rounded size='sm'>Details</MDBBtn>
+                                    <MDBBtn onClick={() => handledetail(data.id)} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm' >Details</MDBBtn>
                                     <MDBBtn onClick={() => handledel(data.id)} className='text-dark mx-1 bg-danger bg-gradient' rounded size='sm' >Delete</MDBBtn>
+
                                 </td>
                             </tr>
                         )
                     }
-
-
                 </MDBTableBody>
             </MDBTable>
+
+            {/* Details Page  */}
+
+            <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
+                <MDBModalDialog>
+                    <MDBModalContent>
+
+                        <MDBModalHeader>
+                            <MDBModalTitle>Student Detail</MDBModalTitle>
+                            <MDBBtn className='btn-close' color='none' onClick={handledetail}></MDBBtn>
+                        </MDBModalHeader>
+
+                        <MDBModalBody>
+                            <MDBTable className='mx-auto' align='middle' border="1px" >
+                                <MDBTableHead>
+                                    <tr>
+                                        <th colSpan="2" className='text-dark text-center'>Studentdetail</th>
+                                    </tr>
+                                </MDBTableHead>
+
+                                <MDBTableBody>
+                                    <tr >
+                                        <td className='bg-gradient'>Student Id:</td>
+                                        <td className='bg-gradient'>{dtl.id}</td>
+                                    </tr>
+                                    <tr >
+                                        <td className='bg-gradient'>Student Name:</td>
+                                        <td className='bg-gradient'>{dtl.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='bg-gradient'>Email:</td>
+                                        <td className='bg-gradient'>{dtl.email}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className='bg-gradient'>Password:</td>
+                                        <td className='bg-gradient'>{dtl.password}</td>
+                                    </tr>
+                                </MDBTableBody>
+                            </MDBTable >
+                        </MDBModalBody>
+                        <MDBModalFooter>
+                            <MDBBtn color='secondary' onClick={handledetail}>Close</MDBBtn>
+                        </MDBModalFooter>
+                    </MDBModalContent>
+                </MDBModalDialog>
+            </MDBModal>
         </>
     );
 }
-
-
-// import React, { useState } from 'react';
-// import {
-//     MDBBtn,
-//     MDBModal,
-//     MDBModalDialog,
-//     MDBModalContent,
-//     MDBModalHeader,
-//     MDBModalTitle,
-//     MDBModalBody,
-//     MDBModalFooter,
-// } from 'mdb-react-ui-kit';
-
-// export default function Studentdata() {
-//     const [centredModal, setCentredModal] = useState(false);
-
-//     const toggleOpen = () => setCentredModal(!centredModal);
-
-//     return (
-//         <>
-//             <MDBBtn onClick={toggleOpen}>Vertically centered modal</MDBBtn>
-
-//             <MDBModal tabIndex='-1' show={centredModal} setShow={setCentredModal}>
-//                 <MDBModalDialog centered>
-//                     <MDBModalContent>
-//                         <MDBModalHeader>
-//                             <MDBModalTitle>Modal title</MDBModalTitle>
-//                             <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
-//                         </MDBModalHeader>
-//                         <MDBModalBody>
-//                             <p>
-//                                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
-//                                 egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-//                             </p>
-//                         </MDBModalBody>
-//                         <MDBModalFooter>
-//                             <MDBBtn color='secondary' onClick={toggleOpen}>
-//                                 Close
-//                             </MDBBtn>
-//                             <MDBBtn>Save changes</MDBBtn>
-//                         </MDBModalFooter>
-//                     </MDBModalContent>
-//                 </MDBModalDialog>
-//             </MDBModal>
-//         </>
-//     );
-// }
