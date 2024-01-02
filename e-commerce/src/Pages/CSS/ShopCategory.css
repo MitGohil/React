@@ -1,0 +1,16 @@
+.shop-category{
+    margin: 0 auto;
+}
+.shopcategory-indexSort {
+  margin: 0px 100px;  
+}
+.shopcategory-sort {
+  border: 1px solid #888;
+}
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.shopcategory-loadmore {
+  background: #ededed;
+}

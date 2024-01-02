@@ -1,0 +1,16 @@
+.newsletter {
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+}
+
+.newsletter h1 {
+  color: #454545;
+}
+
+.newsletter p {
+  color: #454545;
+}
+
+.newsletter input {
+  outline: none;
+  color: #616161;
+}

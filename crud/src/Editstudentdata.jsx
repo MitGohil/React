@@ -17,7 +17,6 @@ export default function Editstudentdata() {
 
 
     useEffect(() => {
-
         fetch("http://localhost:2000/students/" + studentid).then((result) => {
             return result.json().then((resp) => {
                 setId(resp.id)

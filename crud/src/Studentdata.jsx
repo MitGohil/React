@@ -120,10 +120,9 @@ export default function Studentdata() {
                                 <td className='fs-5 text-dark bg-gradient'>{data.password}</td>
                                 <td className='fs-5 text-dark bg-gradient'>{data.role}</td>
                                 <td className='text-center'>
-                                    <MDBBtn onClick={() => { handleedit(data.id) }} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm'>Edit</MDBBtn>
+                                    <MDBBtn onClick={() => handleedit(data.id)} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm'>Edit</MDBBtn>
                                     <MDBBtn onClick={() => handledetail(data.id)} className='text-dark mx-1 bg-primary bg-gradient' rounded size='sm' >Details</MDBBtn>
                                     <MDBBtn onClick={() => handledel(data.id)} className='text-dark mx-1 bg-danger bg-gradient' rounded size='sm' >Delete</MDBBtn>
-
                                 </td>
                             </tr>
                         )

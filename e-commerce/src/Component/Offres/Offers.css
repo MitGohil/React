@@ -1,0 +1,20 @@
+.offers {
+  /* height: 80vh; */
+  margin: auto;
+  padding: 0px 140px;
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+}
+.offers-left {
+  flex: 1;
+}
+
+.offers-left h1 {
+  font-size: 80px;
+}
+
+.offers-left button {
+  background: #ff4141;
+}
+.offers-right {
+  flex: 1;
+}

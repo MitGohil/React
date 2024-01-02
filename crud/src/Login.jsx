@@ -20,40 +20,54 @@ function Login() {
 
 
     const signin = () => {
-        fetch(`http://localhost:2000/students?email=${email}&password=${password}`).then((result) => {
-            return result.json().then((resp) => {
-                console.log(resp);
-                if (resp[0]) {
-                    sessionStorage.setItem("role", resp[0].role)
-                    if (resp[0].role === "admin") {
-                        navigate("/studentdata")
-                    }
-                    else {
-                        navigate("/home")
-                    }
+        // fetch(`http://localhost:2000/students?email=${email}&password=${password}`).then((result) => {
+        //     return result.json().then((resp) => {
+        //         console.log(resp);
+        //         if (resp[0]) {
+        //             sessionStorage.setItem("role", resp[0].role)
+        //             if (resp[0].role === "admin") {
+        //                 navigate("/studentdata")
+        //             }
+        //             else {
+        //                 navigate("/home")
+        //             }
+        //         }
+        //         else {
+        //             alert("Invalid Email or Password")
+        //         }
+        //     })
+        // })
+
+        const posts = async () => {
+            const apiUrl = `http://localhost:2000/students?email=${email}&password=${password}`;
+            const response = await fetch(apiUrl);
+            const resjson = await response.json();
+            if (resjson[0]) {
+                sessionStorage.setItem("role", resjson[0].role)
+                if (resjson[0].role === "admin") {
+                    navigate("/studentdata")
                 }
                 else {
-                    alert("Invalid Email or Password")
+                    navigate("/home")
                 }
-            })
-        })
+            }
+            else {
+                alert("Invalid Email or Password")
+            }
+        }
+        posts()
     }
     const handleback = () => {
         navigate("/login")
     }
     return (
         <>
-            {/* <div style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}> */}
 
             <MDBContainer className="p-3 my-5 d-flex flex-column w-50" >
                 <MDBCardBody className='p-5 shadow-5 text-center'>
 
                     <MDBInput value={email} onChange={(e) => setEmail(e.target.value)} wrapperClass='mb-4' label='Email address' id='form1' type='email' />
                     <MDBInput value={password} onChange={(e) => setPassword(e.target.value)} wrapperClass='mb-4' label='Password' id='form2' type='password' />
-
-                    {/* <div className="d-flex justify-content-between mx-3 mb-4">
-                <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-            <a href="!#">Forgot password?</a>            </div> */}
 
                     <MDBBtn className="my-4 mx-2" onClick={signin}>Sign in</MDBBtn>
                     <MDBBtn className='my-4 mx-2' onClick={handleback} >Back</MDBBtn>
@@ -64,7 +78,6 @@ function Login() {
                 </MDBCardBody>
 
             </MDBContainer >
-            {/* </div> */}
         </>
 
     );
