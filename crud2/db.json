@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "email": "aaa@aaa.aaa",
+      "password": "aaaaa"
+    },
+    {
+      "id": 2,
+      "email": "bbb@bbb.bbb",
+      "password": "bbbbb"
+    },
+    {
+      "id": 3,
+      "email": "ccc@ccc.ccc",
+      "password": "ccccc"
+    },
+    {
+      "email": "ggg@ggggggg",
+      "password": "ggg",
+      "id": 4
+    }
+  ]
+}
