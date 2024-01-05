@@ -21,7 +21,7 @@ export default function Userdata() {
     }, [])
 
     const view = (id) => {
-        navigate("/viewuser/" + id)
+        navigate(`/viewuser/${id}`)
     }
     const edit = (id) => {
         navigate("/edituser/" + id)
@@ -65,9 +65,9 @@ export default function Userdata() {
                             <td>{item.title}</td>
                             <td>{item.body}</td>
                             <td>
-                                <button onClick={() => edit(item.id)} >Edit</button>
+                                <button onClick={() => (edit(item.id))} >Edit</button>
                                 <button onClick={() => delet(item.id)}>Delete</button>
-                                <button onClick={() => { view(item.id) }}>View</button>
+                                <button onClick={() => view(item.id)}>View</button>
                             </td>
                         </tr>
                     )

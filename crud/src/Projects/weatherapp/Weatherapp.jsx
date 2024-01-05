@@ -20,15 +20,17 @@ const Weather = () => {
 
     useEffect(() => {
         const searchCity = async () => {
-            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=${apiKey}`;
-            const response = await fetch(apiUrl);
-            const resjson = await response.json();
-            setCity(resjson.main)
-            setSpeed(resjson.wind)
-            setCondition(resjson.Weather)
-            // console.log(resjson);
-            console.log(city);
-            console.log(speed);
+            try {
+                const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=${apiKey}`;
+                const response = await fetch(apiUrl);
+                const resjson = await response.json();
+                setCity(resjson.main)
+                setSpeed(resjson.wind)
+                setCondition(resjson.Weather)
+            } catch (error) {
+                console.log(error);
+            }
+
             // console.log(resjson.Weather);
 
             // if (condition.main) {
